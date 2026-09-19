@@ -119,7 +119,6 @@ public final class DPSCommand implements CommandHandler {
             // Refresh chars buttons
             targetPlayer.getTeamManager().getActiveTeam().forEach((entity) -> {
                 boolean isAlive = entity.isAlive();
-                entity.addEnergy(100.0F, PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_ENERGY_BALL);
                 entity.setFightProperty(FightProperty.FIGHT_PROP_NONEXTRA_SKILL_CD_MINUS_RATIO, 0);
                 entity.getWorld().broadcastPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
                 if (!isAlive) {
